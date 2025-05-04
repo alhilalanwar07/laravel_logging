@@ -1,3 +1,3 @@
 # Install Laravel dari GitHub
 
-## Clone repository
+## Berhasil Melakukan upload ke github 
