@@ -6,7 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "grkamil/laravel-telegram-logging": "^1.13",
+        "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^12.0",
+        "laravel/pulse": "^1.4",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
         "livewire/livewire": "^3.5",

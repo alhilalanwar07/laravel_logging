@@ -19,7 +19,7 @@ new class extends Component {
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="dark">
                 <a href="#" class="logo">
-                    <img src="{{ url('/') }}/assets/img/logo/koltim-2.png" alt="kolaka timur" height="30" />
+                    <img src="{{ url('/') }}/assets/img/favicon/koltim-2.png" alt="logo" height="30" />
                 </a>
                 <div class="nav-toggle">
                     <button class="btn btn-toggle toggle-sidebar">

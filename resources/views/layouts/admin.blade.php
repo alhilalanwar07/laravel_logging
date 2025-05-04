@@ -6,7 +6,7 @@
         @yield('title', config('app.name'))
     </title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="{{ url('/') }}/assets/img/logo/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="{{ url('/') }}/assets/img/favicon/favicon.ico" type="image/x-icon" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -30,7 +30,7 @@
                     <!-- Logo Header -->
                     <div class="logo-header" data-background-color="white">
                         <a href="#" class="logo">
-                            <img src="{{ url('/') }}/assets/img/logo/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" />
+                            <img src="{{ url('/') }}/assets/img/favicon/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" />
                         </a>
                         <div class="nav-toggle">
                             <button class="btn btn-toggle toggle-sidebar">

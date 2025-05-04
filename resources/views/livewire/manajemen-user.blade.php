@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log as FacadesLog;
 use Livewire\Volt\Component;
 use Livewire\WithPagination;
 
@@ -49,9 +51,32 @@ new class extends Component {
                 // 'status' => 'active'
             ]);
 
+            FacadesLog::info(Auth::user()->name . ' created a new user: ' . $this->name);
+
             $this->reset();
             $this->dispatch('updateAlertToast');
         } catch (\Exception $e) {
+            $this->dispatch('errorAlertToast', $e->getMessage());
+        }
+    }
+
+    // hapus
+    public $user_id;
+    public function delete($id)
+    {
+        $this->user_id = $id;
+    }
+    public function destroy()
+    {
+        try {
+            $user = User::find($this->user_id);
+            $user->delete();
+            
+            FacadesLog::critical('User deleted successfully: ' . $user->name);
+            
+            $this->dispatch('updateAlertToast');
+        } catch (\Exception $e) {
+            FacadesLog::error('Failed to delete user: ' . $e->getMessage());
             $this->dispatch('errorAlertToast', $e->getMessage());
         }
     }
@@ -100,7 +125,26 @@ new class extends Component {
                                 </td>
                                 <td>
                                     <a href="#" class="btn btn-sm btn-primary m-1">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger m-1">Delete</a>
+                                    <button wire:click="delete({{ $user->id }})" class="btn btn-sm btn-danger m-1" data-bs-toggle="modal" data-bs-target="#deleteUser">Delete</button>
+
+                                    <!-- Modal -->  
+                                    <div wire:ignore.self class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUserLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteUserLabel">Hapus User</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin ingin menghapus user ini?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>  
+                                                    <button wire:click="destroy()" type="button" class="btn btn-danger">Delete</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

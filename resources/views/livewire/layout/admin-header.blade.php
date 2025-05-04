@@ -107,7 +107,7 @@ new class extends Component {
                 <li class="nav-item topbar-user dropdown hidden-caret">
                     <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                         <div class="avatar-sm">
-                            <img src="{{ url('/') }}/assets/img/logo/favicon-96x96.png" alt="kolaka timur" class="avatar-img rounded-circle" />
+                            <img src="{{ url('/') }}/assets/img/favicon/favicon-96x96.png" alt="logo" class="avatar-img rounded-circle" />
                         </div>
                         <span class="profile-username">
                             <span class="op-7">Hi,</span>
@@ -121,7 +121,7 @@ new class extends Component {
                             <li>
                                 <div class="user-box">
                                     <div class="avatar-lg">
-                                        <img src="{{ url('/') }}/assets/img/logo/favicon-96x96.png" alt="kolaka timur" class="avatar-img rounded" />
+                                        <img src="{{ url('/') }}/assets/img/favicon/favicon-96x96.png" alt="logo" class="avatar-img rounded" />
                                     </div>
                                     <div class="u-text">
                                         <h4>
